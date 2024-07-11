@@ -1,0 +1,10 @@
+.idea/
+.venv/
+.DS_Store
+.env.example
+.git/
+.gitignore
+.flake8
+Dockerfile
+doc/
+README.md

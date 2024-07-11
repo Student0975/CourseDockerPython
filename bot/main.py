@@ -1,5 +1,8 @@
 import asyncio
 
-from bot.src.echobot import main
+from bot.src.helperbot import main
 
-asyncio.run(main())
+try:
+    asyncio.run(main())
+except KeyboardInterrupt:
+    print('Exit')
