@@ -12,17 +12,23 @@ services:
       - bot_db
   
   bot_db:
-      container_name: pg_db_tlg_bot
-      image: postgres:15
-      volumes:
-        - postgres_data:/data/postgres
-      env_file:
-        - .env  
-      ports:
-        - "${DB_PORT_HOST}:5432"
-      environment:
-        PGDATA: /data/postgres
-  
+    container_name: pg_db_tlg_bot
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/pgdata
+    env_file:
+      - .env  
+    ports:
+      - "${DB_PORT_HOST}:5432"
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
   pgadmin:
     container_name: pgadmin_container
     image: dpage/pgadmin4
