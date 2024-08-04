@@ -20,6 +20,6 @@ class Settings:
     except KeyError as err:
         logging.critical(f" Can't read {err} from enviroment variables.")
         raise KeyError(err)
-  
+
 
 settings = Settings()
