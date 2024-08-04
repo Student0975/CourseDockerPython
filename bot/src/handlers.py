@@ -50,6 +50,7 @@ async def echo_handler(message: Message) -> None:
         # But not all the types is supported to be copied so need to handle it
         await message.answer("Nice try!")
 
+
 def insert_data(message):
     insert_query = (
         f"INSERT INTO messages (message, user_id, message_time) "
