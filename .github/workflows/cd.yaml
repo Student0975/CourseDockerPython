@@ -2,8 +2,8 @@ name: CD_job
 
 on:
   push:
-  branches:
-    - "main"
+    branches:
+      - "main"
 
 jobs:
   deploy:
