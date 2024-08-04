@@ -1,0 +1,28 @@
+name: CI_job
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  flakes8-lint:
+    runs-on: ubuntu-latest
+    name: Lint
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+      - name: Setup Python enviroment
+        uses: actions/setup-python@v4
+        with:
+          python-vesrion: "3.11"
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
+        with:
+          max-line-length: "121"
+
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: psf/black@stable
