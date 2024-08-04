@@ -8,6 +8,7 @@ from bot.src.database.create_table import execute_query
 router = Router()
 timestamp_now = datetime.now(tz=ZoneInfo("UTC")).isoformat(" ")
 
+
 @router.message(CommandStart())
 async def command_start_handler(message: Message) -> None:
     """
