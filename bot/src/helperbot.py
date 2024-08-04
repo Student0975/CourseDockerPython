@@ -18,6 +18,3 @@ async def main() -> None:
     # And the run events dispatching
     dp.include_router(router)
     await dp.start_polling(bot)
-
-
-

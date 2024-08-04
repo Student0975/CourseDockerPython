@@ -13,7 +13,7 @@ load_dotenv()
 @dataclass
 class Settings:
     try:
-        #BOT_TOKEN: str = os.environ.get('BOT_TOKEN')
+        # BOT_TOKEN: str = os.environ.get('BOT_TOKEN')
         BOT_TOKEN = os.environ["BOT_TOKEN"]
         BOT_NAME = os.environ["BOT_NAME"]
         BOT_USERNAME = os.environ["BOT_USERNAME"]
