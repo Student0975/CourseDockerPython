@@ -19,19 +19,21 @@ async def command_start_handler(message: Message) -> None:
     # and the target chat will be passed to :ref:`aiogram.methods.send_message.SendMessage`
     # method automatically or call API method directly via
     # Bot instance: `bot.send_message(chat_id=message.chat.id, ...)`
-    
+
     insert_data(message)
     await message.answer(f"Hello, {html.bold(message.from_user.full_name)}!")
 
+
 @router.message(F.text.upper() == "HOW ARE YOU?")
 async def how_are_you(message: Message) -> None:
-  
+
     try:
         insert_data(message)
         await message.answer("I am fine!")
     except TypeError:
         # But not all the types is supported to be copied so need to handle it
         await message.answer("Nice try!")
+
 
 @router.message()
 async def echo_handler(message: Message) -> None:
