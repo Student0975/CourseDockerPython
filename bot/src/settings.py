@@ -6,7 +6,9 @@ import sys
 
 from dotenv import load_dotenv
 
-logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.INFO, stream=sys.stdout)
+logging.basicConfig(
+    format="%(levelname)s:%(message)s", level=logging.INFO, stream=sys.stdout
+)
 load_dotenv()
 
 
