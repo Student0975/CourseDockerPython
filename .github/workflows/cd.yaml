@@ -23,6 +23,6 @@ jobs:
             cd ${{  secrets.PROJECT_PATH }}
             git pull origin main
             docker-compose rm -sf
-            docker-compose build
-            docker-compose up -d
+            # docker-compose build
+            docker-compose up -build -d
             docker image prune -af
