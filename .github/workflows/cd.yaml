@@ -22,7 +22,7 @@ jobs:
             ssh-add ~/.ssh/id_rsa
             cd ${{  secrets.PROJECT_PATH }}
             git pull origin main
-            docker-compose rm -sf
-            # docker-compose build
-            docker-compose up -build -d
+            docker compose rm -sf
+            # docker compose build
+            docker compose up --build -d
             docker image prune -af
